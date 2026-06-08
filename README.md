@@ -20,3 +20,10 @@ or
 
 - Single Page Application (SPA) Support: React is well-suited for building SPAs, where the entire application runs on a single page and dynamically updates content without requiring a full page reload.
 
+### Class Components Vs Functional Components
+
+- Class Components: These are traditional React components defined as ES6 classes. They have access to lifecycle methods and can manage their own state using the `this.state` object.
+
+- Functional Components: These are simpler components defined as JavaScript functions. They can use React hooks to manage state and lifecycle events, making them more concise and easier to read.
+
+Note: Initially, React only supported class components, but with the introduction of hooks in React 16.8 (in the year of 2019), functional components have become more popular and are now the recommended way to create components in React.
