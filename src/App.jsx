@@ -1,12 +1,4 @@
-// Header Comonent
-function Header() {
-  return (
-    <div>
-      <h1>Hello World!</h1>
-      <p>Welcome to React!!</p>
-    </div>
-  )
-}
+import Header from "./components/Header";
 
 // Main Component
 function App() {
