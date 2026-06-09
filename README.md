@@ -27,3 +27,45 @@ or
 - Functional Components: These are simpler components defined as JavaScript functions. They can use React hooks to manage state and lifecycle events, making them more concise and easier to read.
 
 Note: Initially, React only supported class components, but with the introduction of hooks in React 16.8 (in the year of 2019), functional components have become more popular and are now the recommended way to create components in React.
+
+### Exercise: Props Passing from Parent to Child Component
+
+## React Hands-on Exercise: Student Profile Card
+
+Create a React application to display student details using **components and props**.
+
+### Requirements
+
+1. Create a parent component named `App`.
+
+2. Create a child component named `StudentCard`.
+
+3. In the `App` component, create the following student details:
+
+```jsx
+const studentName = "Arun";
+const course = "React JS";
+const age = 21;
+const city = "Coimbatore";
+```
+
+4. Pass all four values from the `App` component to the `StudentCard` component using props.
+
+5. In the `StudentCard` component, receive the props and display the details in the following format:
+
+```text
+Student Name: Arun
+Course: React JS
+Age: 21
+City: Coimbatore
+```
+
+6. Add basic CSS to display the student details inside a card.
+
+7. Change the student details in the parent component and verify that the updated values are displayed in the child component.
+
+### Rules
+
+* Data must be passed only from parent to child.
+* Do not write the student details directly inside `StudentCard`.
+* Do not use state, events, list rendering, or `map()`.

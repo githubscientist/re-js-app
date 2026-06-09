@@ -1,19 +1,17 @@
-import Header from "./components/Header";
+import StudentCard from './components/StudentCard';
 
 function App() {
-  // logged in user details
-  const loggedInUser = {
-    name: 'Sathish',
-    email: 'sathish@guvi.in'
-  }
+  const studentName = "Arun";
+  const course = "React JS";
+  const age = 21;
+  const city = "Coimbatore";
 
-  return (
-    <>
-      <Header
-        loggedInUser={loggedInUser}
-      />
-    </>
-  ) 
+  return <StudentCard
+    studentName={studentName}
+    course={course}
+    age={age}
+    city={ city }
+  />
 }
 
 export default App;
