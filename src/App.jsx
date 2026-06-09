@@ -1,17 +1,14 @@
-import Child from "./components/Child";
+import C1 from "./components/C1";
 
 const App = () => {
-
-  // 1. create a callback function
-  function callback(data) {
-    console.log('callback called!');
-    console.log(data);
-  }
-
+  
+  let message = 'data from App';
+  
   return (
-    // 2. pass the callback reference as an attribute to the component
     <>
-      <Child callback={callback} />
+      <C1
+        message={message}
+      />
     </>
   )
 }

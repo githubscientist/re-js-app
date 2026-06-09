@@ -69,3 +69,33 @@ City: Coimbatore
 * Data must be passed only from parent to child.
 * Do not write the student details directly inside `StudentCard`.
 * Do not use state, events, list rendering, or `map()`.
+
+## Data Passing
+
+### Passing data from Parent to Child using Props
+
+- Props (short for properties) are used to pass data from a parent component to a child component in React. Props are read-only and cannot be modified by the child component.
+
+### Passing data from Child to Parent using Callbacks
+
+Steps:
+
+1. In the parent component, define a function that will handle the data received from the child component.
+
+2. Pass this function as a prop to the child component.
+
+3. In the child component, call the function passed as a prop and pass the data you want to send back to the parent component.
+
+### Props Drilling
+
+- Props drilling refers to the process of passing data through multiple levels of components in a React application. 
+
+- In other words, passing data from a parent component to a deeply nested child component by passing props through intermediate components that do not need the data themselves is called props drilling.
+
+Drawback of Props Drilling:
+
+1. It can make the code more complex and harder to maintain, especially as the number of components increases.
+
+2. It can lead to performance issues, as every time the parent component re-renders, all the intermediate components that receive the props will also re-render, even if they do not need to.
+
+Solution to Props Drilling: To avoid props drilling, you can use state management libraries like Redux or Context API.
