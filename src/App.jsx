@@ -2,15 +2,16 @@ import Child from "./components/Child";
 
 const App = () => {
 
-  let name = 'Krish';
-  let age = 25;
+  // 1. create a callback function
+  function callback(data) {
+    console.log('callback called!');
+    console.log(data);
+  }
 
   return (
+    // 2. pass the callback reference as an attribute to the component
     <>
-      <Child
-        name={name}
-        age={age}
-      />
+      <Child callback={callback} />
     </>
   )
 }
