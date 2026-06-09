@@ -1,9 +1,10 @@
 // Header Component
-function Header() {
+function Header(props) {
+
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <p>Welcome { props.loggedInUser.name   }! <button>logout</button></p>
+    </>
   )
 }
 
