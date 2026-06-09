@@ -1,17 +1,18 @@
-import StudentCard from './components/StudentCard';
+import Child from "./components/Child";
 
-function App() {
-  const studentName = "Arun";
-  const course = "React JS";
-  const age = 21;
-  const city = "Coimbatore";
+const App = () => {
 
-  return <StudentCard
-    studentName={studentName}
-    course={course}
-    age={age}
-    city={ city }
-  />
+  let name = 'Krish';
+  let age = 25;
+
+  return (
+    <>
+      <Child
+        name={name}
+        age={age}
+      />
+    </>
+  )
 }
 
 export default App;
