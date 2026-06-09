@@ -1,4 +1,5 @@
 import React from "react";
+import Child from "./components/Child";
 
 class App extends React.Component {
 
@@ -8,8 +9,10 @@ class App extends React.Component {
 
     return (
       <>
-        <h1>Greetings!</h1>
-        <p>Hello {name}, Your age is {age}!!</p>
+        <Child
+          name={name}
+          age={age}
+        />
       </>
     )
   }
