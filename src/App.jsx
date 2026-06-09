@@ -3,15 +3,16 @@ import Child from "./components/Child";
 
 class App extends React.Component {
 
-  render() {
-    let name = 'Peter';
-    let age = 10;
+  callback = (name, age) => {
+    console.log('callback is executed!');
+    console.log(name, age);
+  }
 
+  render() {
     return (
       <>
         <Child
-          name={name}
-          age={age}
+          callback={this.callback}
         />
       </>
     )
