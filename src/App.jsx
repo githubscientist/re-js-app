@@ -1,15 +1,20 @@
-import C1 from "./components/C1";
+import Header from "./components/Header";
 
 const App = () => {
-  
-  let message = 'data from App';
-  
+
+  // let's say we have some data in App component
+  // like the currently logged in user information
+  const user = {
+    name: "Krish",
+    email: "krish@guvi.in"
+  }
+
   return (
-    <>
-      <C1
-        message={message}
+    <div>
+      <Header
+        user={user}
       />
-    </>
+    </div>
   )
 }
 
