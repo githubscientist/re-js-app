@@ -1,6 +1,14 @@
 import NavBar from "./NavBar";
 
-const Header = ({ user }) => {
+const Header = ({ liftUp }) => {
+
+  const user = {
+    name: "Krish",
+    email: "krish@guvi.in"
+  }
+
+  // call the callback defined in the App component
+  liftUp(user);
 
   return (
     <div>

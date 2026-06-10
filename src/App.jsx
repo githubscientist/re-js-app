@@ -1,18 +1,16 @@
 import Header from "./components/Header";
 
 const App = () => {
-
-  // let's say we have some data in App component
-  // like the currently logged in user information
-  const user = {
-    name: "Krish",
-    email: "krish@guvi.in"
+  
+  // create a callback
+  const liftUp = (user) => {
+    console.log(user);
   }
 
   return (
     <div>
       <Header
-        user={user}
+        liftUp={liftUp}
       />
     </div>
   )
