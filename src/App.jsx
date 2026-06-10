@@ -31,7 +31,8 @@ const App = () => {
   return (
     <>
       <button onClick={handleLike}>Like { likes }</button> &nbsp;
-      <button onClick={handleDislike}>Dislike { dislikes }</button>
+      <button onClick={handleDislike}>Dislike {dislikes}</button>
+      <p><strong>History of Clicks:</strong> { history.join(', ') }</p>
     </>
   )
 }
