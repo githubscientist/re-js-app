@@ -2,37 +2,42 @@ import { useState } from "react";
 
 const App = () => {
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
-  const [history, setHistory] = useState([]);
-
-  // [L, D, L, D, D, L, L, L]
+  // complex state
+  const [reactions, setReactions] = useState({
+    likes: 0,
+    dislikes: 0,
+    history: []
+  });
 
   const handleLike = () => {
-    setLikes(likes + 1);
-    // history.push('L');
-    setHistory([
-      ...history,
-      'L'
-    ]);
+    setReactions({
+      ...reactions,
+      likes: reactions.likes + 1,
+      history: [
+        ...reactions.history,
+        'L'
+      ]
+    })
   }
 
   const handleDislike = () => {
-    setDislikes(dislikes + 1);
-    // history.push('D');
-    setHistory([
-      ...history,
-      'D'
-    ]);
+    setReactions({
+      ...reactions,
+      dislikes: reactions.dislikes + 1,
+      history: [
+        ...reactions.history,
+        'D'
+      ]
+    })
   }
 
-  console.log(history);
+  console.log(reactions);
 
   return (
     <>
-      <button onClick={handleLike}>Like { likes }</button> &nbsp;
-      <button onClick={handleDislike}>Dislike {dislikes}</button>
-      <p><strong>History of Clicks:</strong> { history.join(', ') }</p>
+      <button onClick={handleLike}>Like { reactions.likes }</button> &nbsp;
+      <button onClick={handleDislike}>Dislike { reactions.dislikes }</button>
+      <p><strong>History of Clicks:</strong> { reactions.history.join(', ') }</p>
     </>
   )
 }
