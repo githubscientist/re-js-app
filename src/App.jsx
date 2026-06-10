@@ -2,42 +2,20 @@ import { useState } from "react";
 
 const App = () => {
 
-  // complex state
-  const [reactions, setReactions] = useState({
-    likes: 0,
-    dislikes: 0,
-    history: []
-  });
+  const elements = ['tea', 'coffee', 'milk', 'milkshakes', 'icecream'];
 
-  const handleLike = () => {
-    setReactions({
-      ...reactions,
-      likes: reactions.likes + 1,
-      history: [
-        ...reactions.history,
-        'L'
-      ]
-    })
-  }
-
-  const handleDislike = () => {
-    setReactions({
-      ...reactions,
-      dislikes: reactions.dislikes + 1,
-      history: [
-        ...reactions.history,
-        'D'
-      ]
-    })
-  }
-
-  console.log(reactions);
+  console.log(elements);
 
   return (
     <>
-      <button onClick={handleLike}>Like { reactions.likes }</button> &nbsp;
-      <button onClick={handleDislike}>Dislike { reactions.dislikes }</button>
-      <p><strong>History of Clicks:</strong> { reactions.history.join(', ') }</p>
+      <h1>Beverages:</h1>
+      <ul>
+        {
+          elements.map((value) => {
+            return <li>{ value.slice(0, 1).toUpperCase() + value.slice(1, ) }</li>;
+          })
+        }
+      </ul>
     </>
   )
 }
