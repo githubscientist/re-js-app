@@ -1,20 +1,20 @@
-import React from "react";
-import Child from "./components/Child";
+import { Component } from 'react';
+import Header from './components/Header';
 
-class App extends React.Component {
-
-  callback = (name, age) => {
-    console.log('callback is executed!');
-    console.log(name, age);
-  }
+class App extends Component {
 
   render() {
+    const user = {
+      name: "Krish",
+      email: "krish@guvi.in"
+    }
+
     return (
-      <>
-        <Child
-          callback={this.callback}
+      <div>
+        <Header
+          user={user}
         />
-      </>
+      </div>
     )
   }
 }
