@@ -1,10 +1,20 @@
+import { useState } from "react";
+
 const App = () => {
 
-  let likes = 0;
+  // state management -> introducing state into components
+  // useState hook -> using this hook, we can bring state managment feature
+  // to the functional component
+  // hooks are functions
+  // useState()
+
+  const [likes, setLikes] = useState(0);
 
   const handleLike = () => {
-    likes++; // likes = likes + 1
-    console.log(likes);
+    // update the state likes
+    // always take the current value of likes state
+    // and update it to plus 1 value
+    setLikes(likes + 1);
   }
 
   return (
