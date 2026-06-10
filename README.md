@@ -99,3 +99,38 @@ Drawback of Props Drilling:
 2. It can lead to performance issues, as every time the parent component re-renders, all the intermediate components that receive the props will also re-render, even if they do not need to.
 
 Solution to Props Drilling: To avoid props drilling, you can use state management libraries like Redux or Context API.
+
+## State Management using hooks
+
+Story: 
+
+Initially, we had only class components in React, and later when we had functional components, we couldn't manage state in them. 
+
+but of course functional components are simpler, concise, and easier to read than class components. but because of lack of state management in functional components, we had to use class components for stateful logic.
+
+In 2019, React introduced hooks, which allowed us to manage state and side effects in functional components. hence, we started using functional components more widely, and they became the recommended way to create components in React.
+
+Hooks:
+
+- Hooks are functions that let you use state and other React features in functional components.
+- The most commonly used hooks are `useState` for managing state and `useEffect` for handling side effects.
+- Hooks will have a prefix of "use" and can only be called at the top level of a functional component or from within other hooks.
+- Hooks cannot be used in class components.
+
+Class Components are called as Stateful Components, because they can manage their own state using `this.state` and lifecycle methods.
+
+Functional Components are called as Stateless Components, because they cannot manage their own state and do not have lifecycle methods. However, with the introduction of hooks, functional components can now manage state and side effects, making them more powerful and versatile than before.
+
+State:
+
+- State is a built-in object in React that allows components to manage and update their own data.
+- State is mutable, meaning it can be changed over time, usually in response to user actions or other events.
+- State is typically used to store data that affects the rendering of a component.
+
+Rendering: 
+
+- Rendering is the process of inserting the React elements into the DOM.
+
+Re-Rendering:
+
+- Re-rendering is the process of updating the DOM when the state or props of a component change. 

@@ -1,18 +1,17 @@
-import Header from "./components/Header";
-
 const App = () => {
-  
-  // create a callback
-  const liftUp = (user) => {
-    console.log(user);
+
+  let likes = 0;
+
+  const handleLike = () => {
+    likes++; // likes = likes + 1
+    console.log(likes);
   }
 
   return (
-    <div>
-      <Header
-        liftUp={liftUp}
-      />
-    </div>
+    <>
+      <h1>Likes: { likes }</h1>
+      <button onClick={handleLike}>Like</button>
+    </>
   )
 }
 
