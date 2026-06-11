@@ -1,16 +1,12 @@
 const Note = ({ note }) => {
-    if (note.favourite) {
-      return (
-            <>
-                <li>{ note.content } { '❤︎⁠' }</li>
-            </>
-        )
-    } 
-
-    return (
+    return note.favourite ? (
+        <>
+            <li>{ note.content } { '❤︎⁠' }</li>
+        </>
+    ) : (
         <>
             <li>{ note.content }</li>
-        </>
+        </>    
     )
 }
 
