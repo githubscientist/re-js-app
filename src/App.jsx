@@ -11,7 +11,7 @@ const App = () => {
   // jsx
   return (
     <>
-      <h1>GUVI-REACT</h1>
+      <h1 style={{ color:'white', backgroundColor: 'green', padding: '4px', textAlign: 'center' }}>GUVI-REACT</h1>
       <ul>
         {
           menuItems
