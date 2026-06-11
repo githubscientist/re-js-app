@@ -145,7 +145,11 @@ Key Prop:
 
 [x] Applying CSS to React Components
 [x] Setting up Tailwind CSS in React
-[ ] Conditional Rendering in React
+[x] Conditional Rendering in React
 [ ] Forms and Controlled Components in React
 [ ] Add icons to React Components
 [ ] Add Toast Notifications, Modals, and Popups in React
+
+## Conditional Rendering
+
+- Conditional rendering in React allows you to render different components or elements based on certain conditions. 
