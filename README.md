@@ -143,8 +143,8 @@ Key Prop:
 
 - When rendering a list of components, React requires a unique `key` prop to be assigned to each component in the list. This helps React identify which items have changed, been added, or removed, improving performance and ensuring that the UI updates correctly when the data changes. The `key` should be a stable and unique identifier for each item in the list, such as an ID or index.
 
-[ ] Applying CSS to React Components
-[ ] Setting up Tailwind CSS in React
+[x] Applying CSS to React Components
+[x] Setting up Tailwind CSS in React
 [ ] Conditional Rendering in React
 [ ] Forms and Controlled Components in React
 [ ] Add icons to React Components
