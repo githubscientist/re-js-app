@@ -1,7 +1,9 @@
+import './MenuItem.css';
+
 const MenuItem = ({ value }) => {
   return (
       <>
-        <li><a href="#">{ value }</a></li>
+        <li className='listItem'><a href="#">{ value }</a></li>
       </>
   )
 }

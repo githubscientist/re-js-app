@@ -1,4 +1,5 @@
 import MenuItem from "./components/MenuItem";
+import './App.css';
 
 const App = () => {
 
@@ -8,22 +9,30 @@ const App = () => {
     'Login',
   ];
 
+
   // jsx
   return (
-    <>
-      <h1 style={{ color:'white', backgroundColor: 'green', padding: '4px', textAlign: 'center' }}>GUVI-REACT</h1>
-      <ul>
-        {
-          menuItems
-            .map((value, index) => {
-              return <MenuItem
-                key={index}
-                value={value}
-              />
-            })
-        }
-      </ul>
-    </>
+    <div className="container">
+      <div className="navHeader">
+        <div>
+          <h3>GUVI-REACT</h3>
+        </div>
+        <div>
+          <ul className="menuList">
+            {
+              menuItems
+                .map((value, index) => {
+                  return <MenuItem
+                    key={index}
+                    value={value}
+                  />
+                })
+            }
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
   )
 }
 
