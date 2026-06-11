@@ -6,7 +6,7 @@ const App = () => {
     {
       "id": 1,
       "content": "React is a JS Framework",
-      "favourite": false
+      "favourite": true
     },
     {
       "id": 2,

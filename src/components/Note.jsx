@@ -1,12 +1,8 @@
 const Note = ({ note }) => {
-    return note.favourite ? (
+    return (
         <>
-            <li>{ note.content } { '❤︎⁠' }</li>
+            <li>{ note.content } { note.favourite && '❤︎⁠' }</li>
         </>
-    ) : (
-        <>
-            <li>{ note.content }</li>
-        </>    
     )
 }
 
