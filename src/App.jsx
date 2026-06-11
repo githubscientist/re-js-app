@@ -1,3 +1,5 @@
+import MenuItem from "./components/MenuItem";
+
 const App = () => {
 
   const menuItems = [
@@ -14,7 +16,10 @@ const App = () => {
         {
           menuItems
             .map((value, index) => {
-              return <li key={index}><a href="#">{ value }</a></li>
+              return <MenuItem
+                key={index}
+                value={value}
+              />
             })
         }
       </ul>
