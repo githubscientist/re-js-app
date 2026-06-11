@@ -1,37 +1,32 @@
-import { useState } from "react";
-import Note from "./components/Note";
-
 const App = () => {
-  const [notes, setNotes] = useState([
-    {
-      "id": 1,
-      "content": "React is a JS Framework",
-      "favourite": true
-    },
-    {
-      "id": 2,
-      "content": "Conditional Rendering in React",
-      "favourite": false
-    },
-    {
-      "id": 3,
-      "content": "State is a component's memory",
-      "favourite": true
-    }
-  ]);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    
+    console.log('logging in with...');
+    console.log(e.target.email.value, e.target.password.value);
+  }
 
   return (
-    <div>
-      <h1>Notes</h1>
-      <ul>
-        {
-          notes
-            .map(note => {
-              return <Note key={note.id} note={note} />
-            })
-        }
-      </ul>
-    </div>
+    <>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email..."
+          name="email"
+        />  
+        &nbsp;
+        <input
+          type="password"
+          placeholder="Password..."
+          name="password"
+        />
+        &nbsp;
+        <button
+          type="submit"
+        >Login</button>
+      </form>
+    </>
   )
 }
 
