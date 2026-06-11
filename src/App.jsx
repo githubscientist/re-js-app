@@ -1,19 +1,21 @@
-import { useState } from "react";
-
 const App = () => {
 
-  const elements = ['tea', 'coffee', 'milk', 'milkshakes', 'icecream'];
+  const menuItems = [
+    'Home',
+    'Register',
+    'Login',
+  ];
 
-  console.log(elements);
-
+  // jsx
   return (
     <>
-      <h1>Beverages:</h1>
+      <h1>GUVI-REACT</h1>
       <ul>
         {
-          elements.map((value) => {
-            return <li>{ value.slice(0, 1).toUpperCase() + value.slice(1, ) }</li>;
-          })
+          menuItems
+            .map((value, index) => {
+              return <li key={index}><a href="#">{ value }</a></li>
+            })
         }
       </ul>
     </>

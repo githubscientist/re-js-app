@@ -134,3 +134,11 @@ Rendering:
 Re-Rendering:
 
 - Re-rendering is the process of updating the DOM when the state or props of a component change. 
+
+List Rendering:
+
+- Given an array of data, we can use the `map()` function to iterate over the array and render a list of components based on that data. For example, generating a list of student cards from an array of student objects or list of items in a shopping cart.
+
+Key Prop:
+
+- When rendering a list of components, React requires a unique `key` prop to be assigned to each component in the list. This helps React identify which items have changed, been added, or removed, improving performance and ensuring that the UI updates correctly when the data changes. The `key` should be a stable and unique identifier for each item in the list, such as an ID or index.
