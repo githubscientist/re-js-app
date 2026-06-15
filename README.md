@@ -157,3 +157,14 @@ Key Prop:
 ## Controlled Inputs Vs Uncontrolled Inputs
 
 Uncontrolled inputs are form elements that manage their own state internally, while controlled inputs are form elements that are controlled by React state.
+
+[ ] Side Effects and useEffect Hook in React
+[ ] Data Fetching with Axios
+[ ] Rendering API Datas
+
+### Lifecycle Methods
+
+- Lifecycle methods are special methods in React class components that allow you to run code at specific points in a component's lifecycle, such as when it mounts, updates, or unmounts.
+- Lifecycle methods include `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+- We can execute side effects in lifecycle methods, such as fetching data from an API or setting up event listeners.
+- By default, functional components do not have lifecycle methods, but with the introduction of hooks, we can use the `useEffect` hook to perform side effects in functional components as well.
