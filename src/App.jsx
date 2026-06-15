@@ -4,13 +4,12 @@ const App = () => {
 
   const [likes, setLikes] = useState(0);
 
-  // useEffect: without dependencies argument
+  // useEffect: with dependencies argument but without any dependencies
   // runs whenever the component is mounted
-  // run whenever the component gets updated
-  // lifecycle methods: componentDidMount() + componentDidUpdate()
+  // lifecycle methods: componentDidMount()
   useEffect(() => {
-    console.log('component is mounted/updated');
-  });
+    console.log('component is mounted');
+  }, []);
 
   const handleLike = () => {
     // this gets executed when the like button is clicked
