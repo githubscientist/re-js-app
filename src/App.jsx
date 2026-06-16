@@ -1,17 +1,15 @@
+import axios from "axios";
+
 const App = () => {
 
   // make an api call
   // using Fetch API
 
   // Make the request
-  fetch('https://api.dictionaryapi.dev/api/v2/entries/en/tree', {
-    method: 'GET'
-  })
+  axios
+    .get('https://api.dictionaryapi.dev/api/v2/entries/en/tree')
     .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
+      console.log(response.data);
     })
     .catch((error) => {
       console.log('API Call Failed!');
