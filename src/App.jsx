@@ -1,20 +1,24 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 const App = () => {
 
-  // make an api call
-  // using Fetch API
+  const [wordDefinitions, setWordDefinitions] = useState([]);
 
-  // Make the request
-  axios
-    .get('https://api.dictionaryapi.dev/api/v2/entries/en/tree')
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.log('API Call Failed!');
-      console.log(error);
-    })
+  useEffect(() => {
+    // Make the request
+    axios
+      .get('https://api.dictionaryapi.dev/api/v2/entries/en/tree')
+      .then((response) => {
+        setWordDefinitions(response.data);
+      })
+      .catch((error) => {
+        console.log('API Call Failed!');
+        console.log(error);
+      })
+  }, []);
+  
+  console.log(wordDefinitions);
   
   return (
     <div>App</div>
