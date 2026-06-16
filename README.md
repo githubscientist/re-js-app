@@ -159,8 +159,8 @@ Key Prop:
 Uncontrolled inputs are form elements that manage their own state internally, while controlled inputs are form elements that are controlled by React state.
 
 [x] Side Effects and useEffect Hook in React
-[ ] Data Fetching with Axios
-[ ] Rendering API Datas
+[x] Data Fetching with Axios
+[x] Rendering API Datas
 
 ### Lifecycle Methods
 
@@ -212,3 +212,15 @@ API endpoint: `https://api.example.com/courses`
 1. Using XHR (XMLHttpRequest): This is the traditional way of making HTTP requests in JavaScript.
 2. Using Fetch API: This is a modern way of making HTTP requests in JavaScript, which returns a promise that resolves to the response of the request.
 3. Using Axios: This is a popular third-party library for making HTTP requests in JavaScript, which provides a simpler and more powerful API than the Fetch API.
+
+## Additional Hooks in React
+
+[ ] useRef for DOM access
+[ ] useReducer for Complex State Management
+[ ] useCallback and useMemo for Performance Optimization
+
+### useRef Hook
+
+- Two ways we can use useRef:
+    1. To access DOM elements directly.
+    2. To store mutable values that persist across renders without causing re-renders.
