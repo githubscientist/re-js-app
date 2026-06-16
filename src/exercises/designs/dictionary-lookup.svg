@@ -1,0 +1,40 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eefbf3"/>
+      <stop offset="100%" stop-color="#dff7e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg2)"/>
+  <rect x="140" y="56" width="1000" height="84" rx="16" fill="#0f5132"/>
+  <text x="180" y="108" font-family="Georgia, serif" font-size="34" fill="#ffffff">Dictionary Lookup</text>
+
+  <rect x="140" y="168" width="1000" height="76" rx="14" fill="#ffffff" stroke="#b7e4c7"/>
+  <rect x="164" y="186" width="760" height="40" rx="8" fill="#f6fffa" stroke="#cceedd"/>
+  <text x="180" y="212" font-family="Verdana, sans-serif" font-size="16" fill="#5b7c69">Type a word...</text>
+  <rect x="944" y="186" width="172" height="40" rx="8" fill="#0f5132"/>
+  <text x="1030" y="212" text-anchor="middle" font-family="Verdana, sans-serif" font-size="15" fill="#ffffff">Search</text>
+
+  <rect x="140" y="272" width="640" height="392" rx="14" fill="#ffffff" stroke="#b7e4c7"/>
+  <text x="168" y="314" font-family="Georgia, serif" font-size="36" fill="#1b4332">serendipity</text>
+  <text x="170" y="344" font-family="Verdana, sans-serif" font-size="16" fill="#2d6a4f">/ˌser.ənˈdɪp.ə.ti/</text>
+  <rect x="170" y="362" width="116" height="28" rx="14" fill="#d8f3dc"/>
+  <text x="228" y="380" text-anchor="middle" font-family="Verdana, sans-serif" font-size="12" fill="#1b4332">noun</text>
+
+  <text x="170" y="422" font-family="Verdana, sans-serif" font-size="16" fill="#1f2937">Definition</text>
+  <text x="170" y="452" font-family="Verdana, sans-serif" font-size="14" fill="#374151">The occurrence of events by chance in a happy way.</text>
+
+  <text x="170" y="502" font-family="Verdana, sans-serif" font-size="16" fill="#1f2937">Example</text>
+  <text x="170" y="532" font-family="Verdana, sans-serif" font-size="14" fill="#374151">Meeting her was pure serendipity.</text>
+
+  <rect x="804" y="272" width="336" height="188" rx="14" fill="#ffffff" stroke="#b7e4c7"/>
+  <text x="832" y="312" font-family="Verdana, sans-serif" font-size="18" fill="#14532d">Recent Searches</text>
+  <text x="832" y="344" font-family="Verdana, sans-serif" font-size="14" fill="#374151">- resilient</text>
+  <text x="832" y="370" font-family="Verdana, sans-serif" font-size="14" fill="#374151">- concise</text>
+  <text x="832" y="396" font-family="Verdana, sans-serif" font-size="14" fill="#374151">- curious</text>
+
+  <rect x="804" y="476" width="336" height="188" rx="14" fill="#fefce8" stroke="#fde68a"/>
+  <text x="832" y="514" font-family="Verdana, sans-serif" font-size="18" fill="#92400e">No Result State</text>
+  <text x="832" y="546" font-family="Verdana, sans-serif" font-size="14" fill="#7c2d12">Word not found.</text>
+  <text x="832" y="572" font-family="Verdana, sans-serif" font-size="14" fill="#7c2d12">Try a simpler or root form.</text>
+</svg>
