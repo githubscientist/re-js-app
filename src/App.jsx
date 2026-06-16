@@ -1,32 +1,32 @@
-import { useEffect, useState } from "react";
-
 const App = () => {
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+  // make an api call
+  // using XHR - XMLHttpRequest
+  // 1. Initialize the XHR instance.
+  const xhr = new XMLHttpRequest();
 
-  // useEffect: with dependencies argument and with dependencies list
-  // runs whenever the component is mounted
-  // runs whenever the state/props provided as dependencies changes/updates
-  // lifecycle methods: componentDidMount() + componentDidUpdate() --modified
-  useEffect(() => {
-    console.log('component is mounted and whenever likes state changes');
-  }, [likes]);
+  // 2. Define the URL
+  const url = 'https://api.dictionaryapi.dev/api/v2/entries/en/tree';
 
-  const handleLike = () => {
-    // this gets executed when the like button is clicked
-    // update the state -> likes
-    setLikes(likes + 1);
+  // 3. Open the Request
+  xhr.open('GET', url);
+
+  // 4. Attach Success and Error callbacks
+  // this will trigger after the api call succeeds or fails
+  xhr.onload = function () {
+    console.log(xhr.responseText);
   }
 
-  return (
-    <div>
-      <h1>Likes: { likes }</h1>
-      <button onClick={handleLike}>Like</button>
+  xhr.onerror = function () {
+    console.log('API Call Failed!');
+  }
 
-      <h2>Dislikes: {dislikes}</h2>
-      <button onClick={() => setDislikes(dislikes + 1)}>Dislike</button>
-    </div>
+  // 5. Send the Request
+  xhr.send();
+
+
+  return (
+    <div>App</div>
   )
 }
 

@@ -158,7 +158,7 @@ Key Prop:
 
 Uncontrolled inputs are form elements that manage their own state internally, while controlled inputs are form elements that are controlled by React state.
 
-[ ] Side Effects and useEffect Hook in React
+[x] Side Effects and useEffect Hook in React
 [ ] Data Fetching with Axios
 [ ] Rendering API Datas
 
@@ -168,3 +168,47 @@ Uncontrolled inputs are form elements that manage their own state internally, wh
 - Lifecycle methods include `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
 - We can execute side effects in lifecycle methods, such as fetching data from an API or setting up event listeners.
 - By default, functional components do not have lifecycle methods, but with the introduction of hooks, we can use the `useEffect` hook to perform side effects in functional components as well.
+
+## Web Application
+
+- In web application, the most commonly used architecture is the client-server architecture, where the client (frontend) interacts with the server (backend) to fetch and manipulate data.
+
+- In client-server architecture, the client sends requests to the server, and the server processes those requests and sends back responses.
+
+- what type of requests? http requests.
+
+- http request: type of request as defined by the HTTP protocol.
+
+- protocol: a set of rules that govern how data is transmitted over a network.
+
+- http protocol defines how the data is transmitted between the client and the server. it defines the structure of the request and response messages, as well as the methods (GET, POST, PUT, DELETE) that can be used to perform different operations on the server.
+
+- http has different versions, such as HTTP/1.1 and HTTP/2, which have different features and performance characteristics.
+
+- http/1.1 is the most widely used version of the HTTP protocol and it defines the request to have a method, a URL, headers, and a body. the response has a status code, headers, and a body.
+
+- for making this communication effective, we use REST architecture, which is a set of principles for designing networked applications. REST stands for Representational State Transfer, and it defines how resources (data) can be accessed and manipulated using HTTP methods.
+
+- http methods: 
+    - GET: used to retrieve data from the server.
+    - POST: used to send data to the server to create a new resource.
+    - PUT: used to update an existing resource on the server.
+    - DELETE: used to delete a resource from the server.
+
+- Restful APIs are designed to follow the principles of REST architecture, making it easier for clients to interact with the server and perform CRUD (Create, Read, Update, Delete) operations on resources.
+- They will use HTTP methods + RESTful endpoints to perform operations on resources, and they will typically return data in a format such as JSON.
+
+For example:
+
+API endpoint: `https://api.example.com/courses`
+
+- GET /courses: retrieves a list of courses from the server.
+- POST /courses: creates a new course on the server.
+- PUT /courses/{id}: updates an existing course with the specified ID on the server.
+- DELETE /courses/{id}: deletes the course with the specified ID from the server.
+
+### Making API Requests in React
+
+1. Using XHR (XMLHttpRequest): This is the traditional way of making HTTP requests in JavaScript.
+2. Using Fetch API: This is a modern way of making HTTP requests in JavaScript, which returns a promise that resolves to the response of the request.
+3. Using Axios: This is a popular third-party library for making HTTP requests in JavaScript, which provides a simpler and more powerful API than the Fetch API.
