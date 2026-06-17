@@ -218,6 +218,9 @@ API endpoint: `https://api.example.com/courses`
 [ ] useRef for DOM access
 [ ] useReducer for Complex State Management
 [ ] useCallback and useMemo for Performance Optimization
+[ ] React Router -- BrowserRouter, Routes, Route
+[ ] Navigation
+[ ] Nested and Dynamic Routes
 
 ### useRef Hook
 
