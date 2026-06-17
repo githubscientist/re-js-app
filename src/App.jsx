@@ -1,21 +1,17 @@
+import { useState } from "react";
+
 const App = () => {
 
-  const handleSubscribe = (event) => {
-    event.preventDefault();
+  const [likes, setLikes] = useState(0);
 
-    // console.log(event.target.email.value);
-    const email = document.getElementById('email');
-
-    console.log(email.value);
+  const handleLike = () => {
+    setLikes(likes + 1);
   }
 
   return (
     <div>
-      <form onSubmit={handleSubscribe}>
-        <input type="email" placeholder="Email to subscribe..." name="email" id="email" />
-        &nbsp;
-        <button name="subscribeButton">Subscribe</button>
-      </form>
+      <h1>Likes: { likes }</h1>
+      <button onClick={handleLike}>Like</button>
     </div>
   )
 }

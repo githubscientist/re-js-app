@@ -215,7 +215,7 @@ API endpoint: `https://api.example.com/courses`
 
 ## Additional Hooks in React
 
-[ ] useRef for DOM access
+[x] useRef for DOM access
 [ ] useReducer for Complex State Management
 [ ] useCallback and useMemo for Performance Optimization
 [ ] React Router -- BrowserRouter, Routes, Route
@@ -225,5 +225,5 @@ API endpoint: `https://api.example.com/courses`
 ### useRef Hook
 
 - Two ways we can use useRef:
-    1. To access DOM elements directly.
+    1. To access DOM elements directly. Instead of using `document.getElementById()` or `document.querySelector()`, we can use the `useRef` hook to create a reference to a DOM element and access it directly in our React component.
     2. To store mutable values that persist across renders without causing re-renders.
