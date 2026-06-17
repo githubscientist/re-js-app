@@ -216,9 +216,9 @@ API endpoint: `https://api.example.com/courses`
 ## Additional Hooks in React
 
 [x] useRef for DOM access
-[ ] useReducer for Complex State Management
+[x] useReducer for Complex State Management
 [ ] useCallback and useMemo for Performance Optimization
-[ ] React Router -- BrowserRouter, Routes, Route
+[x] React Router -- BrowserRouter, Routes, Route
 [ ] Navigation
 [ ] Nested and Dynamic Routes
 
@@ -231,3 +231,16 @@ API endpoint: `https://api.example.com/courses`
 ### useReducer Hook
 
 - The `useReducer` hook is used for managing complex state logic in React functional components. It is an alternative to the `useState` hook and is particularly useful when the state logic involves multiple sub-values or when the next state depends on the previous one.
+
+## React Router
+
+- React is a library for building single-page applications (SPAs) in React. 
+- If we want to build a multi-page application in React without the libraries like React Router, 
+    - we would have to reload the entire page every time we navigate to a new page, which would result in a poor user experience. 
+    - Also, it would be difficult to manage the state of the application across different pages, as each page would have its own state and would not be able to share data with other pages.
+    - Managing browser history and URL changes would also be more complex, as we would have to manually handle the routing logic and update the URL in the browser's address bar.
+
+- React Router is a popular library for handling routing in React applications. 
+    - It allows us to create a multi-page application in React without the need for full page reloads, providing a smoother user experience.
+    - It also provides a way to manage the state of the application across different pages, as well as handle browser history and URL changes in a more efficient way.
+    - React Router provides a set of components and hooks that make it easy to define routes, navigate between pages, and manage the state of the application based on the current route.

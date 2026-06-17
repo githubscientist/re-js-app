@@ -1,41 +1,21 @@
-import { useReducer, useState } from "react";
+// 1. install react-router
 
-const reducer = (state, action) => {
-  // using action object,
-  // conditionally return the new state
-  if (action.type === 'LIKE') {
-    return state + 1;
-  } else if (action.type === 'DISLIKE') {
-    return state - 1;
-  } else if (action.type === 'RESET') {
-    return 0;
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+// 2. create router object
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <h1>HOME</h1>
+  },
+  {
+    path: "/ide",
+    element: <h1>GUVI IDE</h1>
   }
-
-  // always returns the current state
-  // when none of the action type matches the event
-  return state;
-}
+]);
 
 const App = () => {
-
-  const [likes, setLikes] = useReducer(reducer, 0);
-
-  const handleLike = () => {
-    setLikes({ type: 'LIKE' });
-  }
-
-  const handleDislike = () => {
-    setLikes({ type: 'DISLIKE' });
-  }
-
-  return (
-    <div>
-      <h1>Likes: { likes }</h1>
-      <button onClick={handleLike}>Like</button> &nbsp;
-      <button onClick={handleDislike}>Dislike</button>  &nbsp;
-      <button onClick={() => setLikes({ type: 'RESET' })}>Reset</button>
-    </div>
-  )
+  return <RouterProvider router={router}></RouterProvider>
 }
 
 export default App;
