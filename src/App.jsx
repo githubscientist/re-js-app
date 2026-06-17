@@ -1,21 +1,21 @@
-// 1. install react-router
-
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/Home";
+import Ide from "./pages/Ide";
 
-// 2. create router object
+// create a router object
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <h1>HOME</h1>
+    path: '/',
+    element: <Home />
   },
   {
     path: "/ide",
-    element: <h1>GUVI IDE</h1>
+    element: <Ide />
   }
 ]);
 
 const App = () => {
-  return <RouterProvider router={router}></RouterProvider>
+  return <RouterProvider router={router} />
 }
 
 export default App;
