@@ -1,47 +1,21 @@
-import { useEffect, useRef, useState } from "react";
-
 const App = () => {
 
-  const [doRender, setDoRender] = useState(0);
+  const handleSubscribe = (event) => {
+    event.preventDefault();
 
-  /*
-    Ordinary Variable:
+    // console.log(event.target.email.value);
+    const email = document.getElementById('email');
 
-    1. The value gets updated
-    2. The value update/change does not cause re-rendering
-    3. The value will not persist across re-renders
-
-    State Variable:
-    1. The value gets updated
-    2. The value update/change cause re-rendering
-    3. The value will persist across re-renders
-
-    useRef Variable:
-    1. The value gets updated
-    2. The value update/change does not cause re-rendering
-    3. The value will persist across re-renders
-    
-  */
-
-  let likes = useRef(0);
-
-  const handleLike = () => {
-    likes.current++;
-    console.log(likes.current);
-  }
-
-  const handleReRender = () => {
-    setDoRender(doRender + 1);
-    console.log('Component re-rendered');
+    console.log(email.value);
   }
 
   return (
     <div>
-      <h1>Likes: {likes.current}</h1>
-      <button onClick={handleLike}>Like</button>
-
-      &nbsp;
-      <button onClick={handleReRender}>Render</button>
+      <form onSubmit={handleSubscribe}>
+        <input type="email" placeholder="Email to subscribe..." name="email" id="email" />
+        &nbsp;
+        <button name="subscribeButton">Subscribe</button>
+      </form>
     </div>
   )
 }
