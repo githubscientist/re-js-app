@@ -227,3 +227,7 @@ API endpoint: `https://api.example.com/courses`
 - Two ways we can use useRef:
     1. To access DOM elements directly. Instead of using `document.getElementById()` or `document.querySelector()`, we can use the `useRef` hook to create a reference to a DOM element and access it directly in our React component.
     2. To store mutable values that persist across renders without causing re-renders.
+
+### useReducer Hook
+
+- The `useReducer` hook is used for managing complex state logic in React functional components. It is an alternative to the `useState` hook and is particularly useful when the state logic involves multiple sub-values or when the next state depends on the previous one.
