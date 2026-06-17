@@ -7,6 +7,8 @@ const reducer = (state, action) => {
     return state + 1;
   } else if (action.type === 'DISLIKE') {
     return state - 1;
+  } else if (action.type === 'RESET') {
+    return 0;
   }
 
   // always returns the current state
@@ -30,7 +32,8 @@ const App = () => {
     <div>
       <h1>Likes: { likes }</h1>
       <button onClick={handleLike}>Like</button> &nbsp;
-      <button onClick={handleDislike}>Dislike</button>
+      <button onClick={handleDislike}>Dislike</button>  &nbsp;
+      <button onClick={() => setLikes({ type: 'RESET' })}>Reset</button>
     </div>
   )
 }
