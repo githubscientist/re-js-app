@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
@@ -12,8 +13,6 @@ const Todos = () => {
       .then(response => setTodos(response.data));
   }, []);
 
-  console.log(todos);
-
   return (
     <div>
       <h1>Todos</h1>
@@ -21,7 +20,7 @@ const Todos = () => {
         {
           todos
             .map(todo => (
-              <li key={todo.id}>{ todo.title }</li>
+              <li key={todo.id}><Link to={`/dashboard/todo/${todo.id}`}>{ todo.title }</Link></li>
             ))
         }
       </ul>
