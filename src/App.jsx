@@ -3,13 +3,18 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import HomeWrapper from "./wrappers/HomeWrapper";
 
 // create a router object
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <HomeWrapper />,
     children: [
+      {
+        path: "",
+        element: <Home />
+      },
       {
         path: "/register",
         element: <Register />
