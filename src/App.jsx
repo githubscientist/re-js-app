@@ -4,6 +4,10 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import HomeWrapper from "./wrappers/HomeWrapper";
+import DashboardWrapper from "./wrappers/DashboardWrapper";
+import Todos from "./components/Todos";
+import Stats from "./components/Stats";
+import NewTodo from "./components/NewTodo";
 
 // create a router object
 const router = createBrowserRouter([
@@ -27,7 +31,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />
+    element: <DashboardWrapper />,
+    children: [
+      {
+        path: "",
+        element: <Stats />
+      },
+      {
+        path: "todos",
+        element: <Todos />
+      },
+      {
+        path: "todos/new",
+        element: <NewTodo />
+      }
+    ]
   }
 ]);
 
