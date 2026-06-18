@@ -1,9 +1,10 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Register = () => {
     const navigate = useNavigate();
 
-    const handleRegister = () => {
+    const handleRegister = (e) => {
+        e.preventDefault();
         alert('Registration Successful!');
         navigate('/login');
     }
@@ -29,6 +30,7 @@ const Register = () => {
 
               <button type="submit">Register</button>
           </form>
+          <p>Already have an account? <Link to="/login">Login</Link></p>
     </div>
   )
 }
