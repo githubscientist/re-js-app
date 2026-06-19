@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LikesContext } from "../App";
+import { LikesContext } from "./Likes";
 
 const CompC = () => {
 
