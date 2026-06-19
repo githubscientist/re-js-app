@@ -60,14 +60,15 @@ const UpdateTodo = () => {
           type="radio"
           name="isDone"
           value={true}
+          checked={isDone ? true: false}
           onChange={e => setIsDone(true)}
         /> Yes
 
         <input
           type="radio"
           name="isDone"
-          defaultChecked
           value={false}
+          checked={isDone ? false : true}
           onChange={e => setIsDone(false)}
         /> No
         <br /><br />

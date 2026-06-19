@@ -20,7 +20,17 @@ const Todos = () => {
         {
           todos
             .map(todo => (
-              <li key={todo.id}><Link to={`/dashboard/todo/${todo.id}`}>{ todo.title }</Link></li>
+              <li key={todo.id} style={{ listStyleType: "none" }}>
+                <input
+                  type="checkbox"
+                  style={{ marginRight: '12px', display: 'inline-block', marginBottom: '12px' }}
+                  readOnly
+                  checked={todo.isDone}
+                />
+                <Link to={`/dashboard/todo/${todo.id}`}>
+                  {todo.title}
+                </Link>
+              </li>
             ))
         }
       </ul>
