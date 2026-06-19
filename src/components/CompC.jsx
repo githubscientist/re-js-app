@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { LikesContext } from "./Likes";
+import { useLikes } from "./Likes";
 
 const CompC = () => {
 
     // 3. Use the context to get the data
-    const { likes, setLikes } = useContext(LikesContext);
+    // custom hook
+    const { likes, setLikes } = useLikes();
 
   return (
     <div>

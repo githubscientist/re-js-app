@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 // 1. Create a context and export the context
 // so that it will be available for all the components
@@ -16,6 +16,12 @@ const Likes = ({ children }) => {
         }
     </LikesContext.Provider>
   )
+}
+
+export function useLikes() {
+    const context = useContext(LikesContext);
+
+    return context;
 }
 
 export default Likes;
