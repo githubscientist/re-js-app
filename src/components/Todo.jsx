@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const Todo = () => {
 
-    const [todo, setTodo] = useState({});
+  const [todo, setTodo] = useState({});
+  const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -13,6 +14,23 @@ const Todo = () => {
             .get(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`)
             .then(response => setTodo(response.data));
     }, []);
+  
+  const handleDelete = () => {
+    // get a confirmation from the user to delete
+    const shouldDelete = confirm('Are you sure want to delete?');
+    if (shouldDelete) {
+      // we can proceed with the deletion
+      // make an api call to delete the todo with id
+      axios
+        .delete(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`)
+        .then(() => {
+          alert('Todo is deleted!');
+
+          // re-direct the user to the all todos page
+          navigate('/dashboard/todos')
+        })
+    }
+  }
 
   return (
     <div>
@@ -22,7 +40,7 @@ const Todo = () => {
           <p><strong>Created At: </strong>{todo.createdAt}</p>
           
           <button>Edit</button> &nbsp;
-          <button>Delete</button>
+          <button onClick={handleDelete}>Delete</button>
     </div>
   )
 }
