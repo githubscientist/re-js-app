@@ -1,12 +1,9 @@
 import CompB from "./CompB";
 
-const CompA = ({ likes, setLikes }) => {
+const CompA = () => {
   return (
     <div>
-          <CompB
-              likes={likes}
-              setLikes={setLikes}
-          />      
+        <CompB />      
     </div>
   )
 }
