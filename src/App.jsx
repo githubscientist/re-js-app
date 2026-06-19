@@ -9,6 +9,7 @@ import Todos from "./components/Todos";
 import Stats from "./components/Stats";
 import NewTodo from "./components/NewTodo";
 import Todo from "./components/Todo";
+import UpdateTodo from "./components/UpdateTodo";
 
 // create a router object
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "todo/:id",
         element: <Todo />
+      },
+      {
+        path: "todo/:id/edit",
+        element: <UpdateTodo />
       }
     ]
   }
