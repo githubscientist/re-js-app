@@ -1,17 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
+import { selectTodos, setTodos } from "../redux/features/todoSlice";
 
 const Todos = () => {
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
+  const todos = useSelector(selectTodos);
   const [filterTodos, setFilterTodos] = useState('all');
+
+  const dispatch = useDispatch();
 
   // this run once during the component renders
   useEffect(() => {
     // make an api call
     axios
       .get('https://6a3403ef8248ee962fa4f20a.mockapi.io/todos')
-      .then(response => setTodos(response.data));
+      .then(response => dispatch(setTodos(response.data)));
   }, []);
 
   return (

@@ -10,6 +10,8 @@ import Stats from "./components/Stats";
 import NewTodo from "./components/NewTodo";
 import Todo from "./components/Todo";
 import UpdateTodo from "./components/UpdateTodo";
+import { Provider } from "react-redux";
+import store from "./redux/app/store";
 
 // create a router object
 const router = createBrowserRouter([
@@ -60,7 +62,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  )
 }
 
 export default App;
