@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'LIKE':
+      return state + 1;
+  }
+
+  // make sure to return the current state in all else situation
+  return state;
+}
+
 
 const App = () => {
 
   // add a state to handle the likes
-  const [likes, setLikes] = useState(0);
+  const [likes, dispatch] = useReducer(reducer, 0);
 
   const handleLike = () => {
-    // setLikes((prev) => prev + 1);
-    setLikes(likes + 1);
+    dispatch({ type: 'LIKE' });
   };
 
   return (
