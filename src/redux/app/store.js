@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import likeReducer from '../features/likeSlice';
 
-// create a new store
+// create or configure a store
 const store = configureStore({
     reducer: {
-        like: likeReducer
+        like: likeReducer,
     }
 });
 

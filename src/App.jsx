@@ -1,22 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
-import { doLikes, likesSelector } from "./redux/features/likeSlice";
+import { doLikes, likeSelector } from "./redux/features/likeSlice";
 
 const App = () => {
 
-  // get the state from the redux
-  const likes = useSelector(likesSelector);
+  // select the data from the redux store
+  // we use useSelector hook to select the data
+  const likes = useSelector(likeSelector);
 
-  // create a dispatch object
+  // we need dispatch function to dispatch an action
   const dispatch = useDispatch();
-
-  const handleLike = () => {
-    dispatch(doLikes());
-  }
 
   return (
     <div>
       <h1>Likes: { likes }</h1>
-      <button onClick={handleLike}>Like</button>
+      <button onClick={() => dispatch(doLikes())}>Like</button>
     </div>
   )
 }

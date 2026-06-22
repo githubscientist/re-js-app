@@ -1,20 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // create a slice
-export const likeSlice = createSlice({
+const likeSlice = createSlice({
+    // name of the slice
     name: 'like',
+    // initial state
     initialState: {
         likes: 0
     },
+    // reducers
     reducers: {
-        doLikes: (state) => {
-            state.likes++;
+        doLikes: (state, action) => {
+            // state.likes++;
+            state.likes = state.likes + 1;
         }
     }
 });
 
+// export the reducers
 export const { doLikes } = likeSlice.actions;
 
-export const likesSelector = (state) => state.like.likes;
+// export the selector to select only the likes state
+export const likeSelector = (state) => state.like.likes;
 
+// export the reducer
 export default likeSlice.reducer;
