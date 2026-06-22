@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { doLikes, likeSelector } from "./redux/features/likeSlice";
+import { doDislikes, doLikes, likeSelector } from "./redux/features/likeSlice";
 
 const App = () => {
 
@@ -10,10 +10,20 @@ const App = () => {
   // we need dispatch function to dispatch an action
   const dispatch = useDispatch();
 
+  const handleLike = () => {
+    dispatch(doLikes());
+  };
+
+  const handleDislike = () => {
+    dispatch(doDislikes());
+  }
+
   return (
     <div>
       <h1>Likes: { likes }</h1>
-      <button onClick={() => dispatch(doLikes())}>Like</button>
+      <button onClick={handleLike}>Like</button>
+      &nbsp;
+      <button onClick={handleDislike}>Dislike</button>
     </div>
   )
 }

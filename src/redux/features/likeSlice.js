@@ -13,12 +13,15 @@ const likeSlice = createSlice({
         doLikes: (state, action) => {
             // state.likes++;
             state.likes = state.likes + 1;
+        },
+        doDislikes: (state, action) => {
+            state.likes = state.likes - 1;
         }
     }
 });
 
 // export the reducers
-export const { doLikes } = likeSlice.actions;
+export const { doLikes, doDislikes } = likeSlice.actions;
 
 // export the selector to select only the likes state
 export const likeSelector = (state) => state.like.likes;
