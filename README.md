@@ -219,8 +219,8 @@ API endpoint: `https://api.example.com/courses`
 [x] useReducer for Complex State Management
 [ ] useCallback and useMemo for Performance Optimization
 [x] React Router -- BrowserRouter, Routes, Route
-[ ] Navigation
-[ ] Nested and Dynamic Routes
+[x] Navigation
+[x] Nested and Dynamic Routes
 
 ### useRef Hook
 
@@ -244,3 +244,10 @@ API endpoint: `https://api.example.com/courses`
     - It allows us to create a multi-page application in React without the need for full page reloads, providing a smoother user experience.
     - It also provides a way to manage the state of the application across different pages, as well as handle browser history and URL changes in a more efficient way.
     - React Router provides a set of components and hooks that make it easy to define routes, navigate between pages, and manage the state of the application based on the current route.
+
+## Redux
+
+- Redux is a state management library for JavaScript applications, often used with React.
+- It provides a centralized store for managing the state of an application, making it easier to manage and share state across different components.
+- Redux follows a unidirectional data flow, where actions are dispatched to update the state in the store, and components subscribe to the store to receive updates when the state changes.
+- Redux is often used in larger applications where managing state can become complex, and it provides a predictable way to manage state changes and ensure that the application behaves consistently.
