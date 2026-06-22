@@ -7,16 +7,19 @@ const likeSlice = createSlice({
     // initial state
     initialState: {
         likes: 0,
-        dislikes: 0
+        dislikes: 0,
+        history: []
     },
     // reducers
     reducers: {
         doLikes: (state, action) => {
             // state.likes++;
             state.likes = state.likes + 1;
+            state.history.push('L');
         },
         doDislikes: (state, action) => {
             state.dislikes = state.dislikes + 1;
+            state.history.push('D');
         }
     }
 });
@@ -28,6 +31,8 @@ export const { doLikes, doDislikes } = likeSlice.actions;
 export const likeSelector = (state) => state.like.likes;
 
 export const dislikeSelector = (state) => state.like.dislikes;
+
+export const historySelector = (state) => state.like.history;
 
 // export the reducer
 export default likeSlice.reducer;
