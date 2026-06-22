@@ -251,3 +251,107 @@ API endpoint: `https://api.example.com/courses`
 - It provides a centralized store for managing the state of an application, making it easier to manage and share state across different components.
 - Redux follows a unidirectional data flow, where actions are dispatched to update the state in the store, and components subscribe to the store to receive updates when the state changes.
 - Redux is often used in larger applications where managing state can become complex, and it provides a predictable way to manage state changes and ensure that the application behaves consistently.
+
+## Redux Toolkit Setup
+
+1. Visit https://redux-toolkit.js.org/introduction/getting-started to copy the installation commands for installing Redux Toolkit and React-Redux.
+
+```
+npm install @reduxjs/toolkit react-redux
+```
+
+2. Create a folder named `redux` in the `src` directory of your React application.
+
+3. Inside the `redux` folder, create two folders named `app` and `features`.
+
+4. Inside the features folder, create a file named `likeSlice.js`.
+
+5. In the `likeSlice.js` file, import the `createSlice` function from Redux Toolkit and create a slice for managing the like state of a post.
+
+```jsx
+import { createSlice } from "@reduxjs/toolkit";
+
+// create a slice
+export const likeSlice = createSlice({
+    name: 'like',
+    initialState: {
+        likes: 0
+    },
+    reducers: {
+        doLikes: (state) => {
+            state.likes++;
+        }
+    }
+});
+
+export const { doLikes } = likeSlice.actions;
+
+export const likesSelector = (state) => state.like.likes;
+
+export default likeSlice.reducer;
+```
+
+6. In the `app` folder, create a file named `store.js`.
+
+7. In the `store.js` file, import the `configureStore` function from Redux Toolkit and create a store that includes the like slice reducer.
+
+```jsx
+import { configureStore } from "@reduxjs/toolkit";
+import likeReducer from '../features/likeSlice';
+
+// create a new store
+const store = configureStore({
+    reducer: {
+        like: likeReducer
+    }
+});
+
+// export the store
+export default store;
+```
+
+8. In the `main.js` file, import the `Provider` component from React-Redux and wrap your application with it, passing the store as a prop.
+
+````jsx
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import { Provider } from 'react-redux';
+import store from './redux/app/store.js';
+// uncomment the following line for enabling tailwindcss
+// import './index.css'
+
+createRoot(document.getElementById('root')).render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
+````
+
+9. In the `App.js` file, import the `useSelector` and `useDispatch` hooks from React-Redux, and use them to access the like state and dispatch the doLikes action when a button is clicked.
+
+```jsx  
+import { useDispatch, useSelector } from "react-redux";
+import { doLikes, likesSelector } from "./redux/features/likeSlice";
+
+const App = () => {
+
+  // get the state from the redux
+  const likes = useSelector(likesSelector);
+
+  // create a dispatch object
+  const dispatch = useDispatch();
+
+  const handleLike = () => {
+    dispatch(doLikes());
+  }
+
+  return (
+    <div>
+      <h1>Likes: { likes }</h1>
+      <button onClick={handleLike}>Like</button>
+    </div>
+  )
+}
+
+export default App;
+```

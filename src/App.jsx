@@ -1,24 +1,17 @@
-import { useReducer, useState } from "react";
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'LIKE':
-      return state + 1;
-  }
-
-  // make sure to return the current state in all else situation
-  return state;
-}
-
+import { useDispatch, useSelector } from "react-redux";
+import { doLikes, likesSelector } from "./redux/features/likeSlice";
 
 const App = () => {
 
-  // add a state to handle the likes
-  const [likes, dispatch] = useReducer(reducer, 0);
+  // get the state from the redux
+  const likes = useSelector(likesSelector);
+
+  // create a dispatch object
+  const dispatch = useDispatch();
 
   const handleLike = () => {
-    dispatch({ type: 'LIKE' });
-  };
+    dispatch(doLikes());
+  }
 
   return (
     <div>
