@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import instance from '../instances/instance';
+import todoServices from "../services/todoServices";
 
 const UpdateTodo = () => {
   const [title, setTitle] = useState('');
@@ -11,29 +12,36 @@ const UpdateTodo = () => {
 
     const navigate = useNavigate();
     
-    useEffect(() => {
-        instance
-            .get(`/todos/${id}`)
-            .then(response => {
-                setTitle(response.data.title);
-                setDescription(response.data.description);
-                setIsDone(response.data.isDone);
-            })
-    }, []);
+  const fetchTodoById = async (id) => {
+    try {
+      const response = await todoServices.getTodoById(id);
+      setTitle(response.data.title);
+      setDescription(response.data.description);
+      setIsDone(response.data.isDone);
+    } catch (error) {
+      console.log(`Error fetching todo by id`, error);
+      setTitle('');
+      setDescription('');
+      setIsDone(false);
+    }
+  }
+  
+  useEffect(() => {
+    fetchTodoById(id);
+  }, []);
 
-  const handleUpdateTodo = (e) => {
+  const handleUpdateTodo = async (e) => {
     e.preventDefault();
-    
-    // make an api call to create a new todo in the server
-      instance
-          .put(`/todos/${id}`, {
-              title, description, isDone
-          })
-          .then(() => {
-              alert('Todo updated!');
 
-              navigate('/dashboard/todos');
-          });
+    try {
+      await todoServices.updateTodoById(id, {
+        title, description, isDone
+      });
+      alert('Todo updated!');
+      navigate('/dashboard/todos');
+    } catch (error) {
+      console.log(`Error updating todo`, error);
+    }
   }
 
   return (

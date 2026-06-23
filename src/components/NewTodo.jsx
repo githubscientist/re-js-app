@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import instance from '../instances/instance';
+import todoServices from "../services/todoServices";
 
 const NewTodo = () => {
   const [title, setTitle] = useState('');
@@ -10,19 +11,18 @@ const NewTodo = () => {
 
   const navigate = useNavigate();
 
-  const handleCreateTodo = (e) => {
+  const handleCreateTodo = async (e) => {
     e.preventDefault();
     
-    // make an api call to create a new todo in the server
-    instance
-      .post('/todos', {
+    try {
+      await todoServices.createTodo({
         title, description, isDone
-      })
-      .then(() => {
-        alert('Todo created!');
-
-        navigate('/dashboard/todos');
-      })
+      });
+      alert('Todo created!');
+      navigate('/dashboard/todos');
+    } catch (error) {
+      console.log(`Error creating new todo`, error);
+    }
   }
 
   return (
