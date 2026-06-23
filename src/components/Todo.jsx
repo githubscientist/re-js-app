@@ -3,27 +3,20 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import instance from "../instances/instance";
 import todoServices from "../services/todoServices";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTodoById, selectTodo } from "../redux/features/todoSlice";
 
 const Todo = () => {
 
-  const [todo, setTodo] = useState({});
+  const todo = useSelector(selectTodo);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { id } = useParams();
-
-  const fetchTodoById = async () => {
-    try {
-      const response = await todoServices.getTodoById(id);
-      setTodo(response.data);
-    } catch (error) {
-      console.log(`Error fetching todo by id`, error);
-      setTodo({});
-    }
-  }  
   
     useEffect(() => {
-      fetchTodoById();
-    }, []);
+      if(id) dispatch(fetchTodoById(id));
+    }, [dispatch,id]);
   
   const handleDelete = async () => {
     const shouldDelete = confirm('Are you sure want to delete?');

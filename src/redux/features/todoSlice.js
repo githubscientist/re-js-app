@@ -15,6 +15,20 @@ export const fetchTodos = createAsyncThunk(
     }
 )
 
+// GET /todos/:id
+export const fetchTodoById = createAsyncThunk(
+    'todo/fetchTodoById',
+    async (id, thunkAPI) => {
+        try {
+            const response = await todoServices.getTodoById(id);
+            return response.data;
+        } catch (error) {
+            console.log(`Error fetching todo by id`, error);
+            return {};
+        }
+    }
+)
+
 // create a new slice
 const todoSlice = createSlice({
     name: 'todo',
@@ -22,7 +36,11 @@ const todoSlice = createSlice({
         todos: [],
         filterTodos: 'all',
         loadingTodos: false,
-        todosError: null
+        todosError: null,
+
+        todo: {},
+        loadingTodo: false,
+        todoError: null
     },
     reducers: {},
     extraReducers: (builder) => {
@@ -41,9 +59,25 @@ const todoSlice = createSlice({
                 state.todos = [];
                 state.todosError = action.payload || "Failed to fetch todos";
             })
+        
+            .addCase(fetchTodoById.pending, (state) => {
+                state.loadingTodo = true;
+                state.todoError = null;
+            })
+            .addCase(fetchTodoById.fulfilled, (state, action) => {
+                state.loadingTodo = false;
+                state.todo = action.payload;
+            })
+            .addCase(fetchTodoById.rejected, (state, action) => {
+                state.loadingTodo = false;
+                state.todo = {};
+                state.todoError = action.payload || "Failed to fetch todo";
+            })
     }
 });
 
 export const selectTodos = state => state.todo.todos;
+
+export const selectTodo = state => state.todo.todo;
 
 export default todoSlice.reducer;
