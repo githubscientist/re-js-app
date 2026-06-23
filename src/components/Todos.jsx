@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { selectTodos, setTodos } from "../redux/features/todoSlice";
-import instance from "../instances/instance";
+import todoServices from "../services/todoServices";
 
 const Todos = () => {
   const todos = useSelector(selectTodos);
@@ -11,12 +11,18 @@ const Todos = () => {
 
   const dispatch = useDispatch();
 
-  // this run once during the component renders
+  const fetchTodos = async () => {
+    try {
+      const response = await todoServices.getTodos();
+      dispatch(setTodos(response.data));
+    } catch (error) {
+      console.log(`Error fetching todos`, error);
+      dispatch(setTodos([]));
+    }
+  }
+
   useEffect(() => {
-    // make an api call
-    instance
-      .get('/todos')
-      .then(response => dispatch(setTodos(response.data)));
+    fetchTodos();
   }, []);
 
   return (
