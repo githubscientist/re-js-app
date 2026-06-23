@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import instance from '../instances/instance';
 
 const NewTodo = () => {
   const [title, setTitle] = useState('');
@@ -13,8 +14,8 @@ const NewTodo = () => {
     e.preventDefault();
     
     // make an api call to create a new todo in the server
-    axios
-      .post('https://6a3403ef8248ee962fa4f20a.mockapi.io/todos', {
+    instance
+      .post('/todos', {
         title, description, isDone
       })
       .then(() => {

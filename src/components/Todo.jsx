@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import instance from "../instances/instance";
 
 const Todo = () => {
 
@@ -10,8 +11,8 @@ const Todo = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        axios
-            .get(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`)
+        instance
+            .get(`/todos/${id}`)
             .then(response => setTodo(response.data));
     }, []);
   
@@ -21,8 +22,8 @@ const Todo = () => {
     if (shouldDelete) {
       // we can proceed with the deletion
       // make an api call to delete the todo with id
-      axios
-        .delete(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`)
+      instance
+        .delete(`/todos/${id}`)
         .then(() => {
           alert('Todo is deleted!');
 

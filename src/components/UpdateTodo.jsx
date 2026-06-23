@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import instance from '../instances/instance';
 
 const UpdateTodo = () => {
   const [title, setTitle] = useState('');
@@ -11,8 +12,8 @@ const UpdateTodo = () => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        axios
-            .get(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`)
+        instance
+            .get(`/todos/${id}`)
             .then(response => {
                 setTitle(response.data.title);
                 setDescription(response.data.description);
@@ -24,8 +25,8 @@ const UpdateTodo = () => {
     e.preventDefault();
     
     // make an api call to create a new todo in the server
-      axios
-          .put(`https://6a3403ef8248ee962fa4f20a.mockapi.io/todos/${id}`, {
+      instance
+          .put(`/todos/${id}`, {
               title, description, isDone
           })
           .then(() => {

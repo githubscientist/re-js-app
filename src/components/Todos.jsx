@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
 import { selectTodos, setTodos } from "../redux/features/todoSlice";
+import instance from "../instances/instance";
 
 const Todos = () => {
-  // const [todos, setTodos] = useState([]);
   const todos = useSelector(selectTodos);
   const [filterTodos, setFilterTodos] = useState('all');
 
@@ -14,8 +14,8 @@ const Todos = () => {
   // this run once during the component renders
   useEffect(() => {
     // make an api call
-    axios
-      .get('https://6a3403ef8248ee962fa4f20a.mockapi.io/todos')
+    instance
+      .get('/todos')
       .then(response => dispatch(setTodos(response.data)));
   }, []);
 

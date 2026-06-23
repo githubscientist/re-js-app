@@ -244,3 +244,9 @@ API endpoint: `https://api.example.com/courses`
     - It allows us to create a multi-page application in React without the need for full page reloads, providing a smoother user experience.
     - It also provides a way to manage the state of the application across different pages, as well as handle browser history and URL changes in a more efficient way.
     - React Router provides a set of components and hooks that make it easy to define routes, navigate between pages, and manage the state of the application based on the current route.
+
+## Axios Instance
+
+- Axios is a popular JavaScript library for making HTTP requests from the browser or Node.js. It provides a simple and easy-to-use API for sending asynchronous requests and handling responses.
+
+- An Axios instance is a pre-configured instance of the Axios library that allows you to set default configuration options for all requests made using that instance. This can be useful for setting common headers, base URLs, or other options that you want to apply to multiple requests.
