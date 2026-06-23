@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
-import { selectTodos, setTodos } from "../redux/features/todoSlice";
+import { fetchTodos, selectTodos } from "../redux/features/todoSlice";
 import todoServices from "../services/todoServices";
 
 const Todos = () => {
@@ -11,18 +11,8 @@ const Todos = () => {
 
   const dispatch = useDispatch();
 
-  const fetchTodos = async () => {
-    try {
-      const response = await todoServices.getTodos();
-      dispatch(setTodos(response.data));
-    } catch (error) {
-      console.log(`Error fetching todos`, error);
-      dispatch(setTodos([]));
-    }
-  }
-
   useEffect(() => {
-    fetchTodos();
+    dispatch(fetchTodos());
   }, []);
 
   return (

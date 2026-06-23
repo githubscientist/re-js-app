@@ -219,8 +219,8 @@ API endpoint: `https://api.example.com/courses`
 [x] useReducer for Complex State Management
 [ ] useCallback and useMemo for Performance Optimization
 [x] React Router -- BrowserRouter, Routes, Route
-[ ] Navigation
-[ ] Nested and Dynamic Routes
+[x] Navigation
+[x] Nested and Dynamic Routes
 
 ### useRef Hook
 
@@ -250,3 +250,7 @@ API endpoint: `https://api.example.com/courses`
 - Axios is a popular JavaScript library for making HTTP requests from the browser or Node.js. It provides a simple and easy-to-use API for sending asynchronous requests and handling responses.
 
 - An Axios instance is a pre-configured instance of the Axios library that allows you to set default configuration options for all requests made using that instance. This can be useful for setting common headers, base URLs, or other options that you want to apply to multiple requests.
+
+## Redux Thunk
+
+- Redux Thunk is a middleware for Redux that allows you to write action creators that return a function instead of an action. This function can then be used to perform asynchronous operations, such as making API requests, before dispatching an action to the Redux store.
