@@ -6,7 +6,7 @@ import { isSortable } from "@dnd-kit/react/sortable";
 const App = () => {
 
   const [items, setItems] = useState([
-    { id:1, content: 'apple'},
+    { id:1, content: 'banana'},
     { id: 2, content: 'orange'},
     { id: 3, content: 'pineapple'},
     { id: 4, content: 'cherry'},
