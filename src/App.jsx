@@ -1,22 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
 
-  const elements = ['tea', 'coffee', 'milk', 'milkshakes', 'icecream'];
+  const initialLikes = parseInt(localStorage.getItem('likes')) || 0;
+  const [likes, setLikes] = useState(initialLikes);
 
-  console.log(elements);
+  useEffect(() => {
+    if (!localStorage.getItem('likes')) {
+      localStorage.setItem('likes', String(0));
+    }
+  }, []);
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+    // should also update the localStorage
+    localStorage.setItem('likes', (parseInt(localStorage.getItem('likes')) + 1).toString());
+  }
 
   return (
-    <>
-      <h1>Beverages:</h1>
-      <ul>
-        {
-          elements.map((value) => {
-            return <li>{ value.slice(0, 1).toUpperCase() + value.slice(1, ) }</li>;
-          })
-        }
-      </ul>
-    </>
+    <div>
+      <h1>Likes: {likes}</h1>
+      <button onClick={handleLike}>Like</button>
+    </div>
   )
 }
 
